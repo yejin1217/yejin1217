@@ -17,7 +17,7 @@
 ![image](https://github.com/yejin1217/yejin1217/assets/144872115/40ccf919-5f2c-4ce5-80c3-99e6c81ce927)
 
 # 내가 좋아하는 마케팅 명언
-간단하게 만들어라, 기억하게 만들어라
+§간단하게 만들어라, 기억하게 만들어라§
 
 ![image](https://github.com/yejin1217/yejin1217/assets/144872115/3ee14867-2c5b-4156-8e93-60f198344612)
 
