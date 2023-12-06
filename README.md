@@ -21,3 +21,5 @@
 
 ![image](https://github.com/yejin1217/yejin1217/assets/144872115/3ee14867-2c5b-4156-8e93-60f198344612)
 
+## 거주지
+경기도 양주시 회천중앙로 ~
