@@ -14,6 +14,6 @@
  
 ## 중요시 하는 명언
 
-https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201810/11/426296c7-aff8-4611-9bc9-bfabf48275b9.jpg
+![image](https://github.com/yejin1217/yejin1217/assets/144872115/40ccf919-5f2c-4ce5-80c3-99e6c81ce927)
 
 
