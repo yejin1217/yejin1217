@@ -12,7 +12,7 @@
 원격 저장소: 여러 사용자가 함께 공유하는 저장소
 지역 저장소: 개인 저장소로, 내 파일이 저장되는 곳
 
-2. Git과 버전 관리 시스템 개요
+/2. Git과 버전 관리 시스템 개요
 
 2.1 Clone, Push, Pull
 Clone: 서버의 원격 저장소를 지역 저장소로 복제. 프로젝트 시작 시 사용
@@ -25,7 +25,7 @@ Add: 변경된 파일을 스테이징 영역에 추가. Add 후에 Commit으로 
 Push: 지역 저장소 변경 내용을 원격 저장소로 올림. 공개 작업물을 공유할 때 사용
 Pull: 원격 저장소에서 지역 저장소로 변경 사항을 가져옴. 다른 사람의 작업물을 가져올 때 사용
 
-3. 깃 설정과 저장소 생성 실습
+/3. 깃 설정과 저장소 생성 실습
 
 3.1 깃 환경 설정
 $ git config --global user.name yejin
@@ -41,7 +41,7 @@ $ cd basic
 $ ls -al
 위 명령어를 통해 사용자 설정과 "basic" 폴더의 Git 저장소 생성 확인
 
-4. Pull Request 기초
+/4. Pull Request 기초
 
 4.1 Push와 Pull 기능
 Push: 지역 저장소 변경 내용을 원격 저장소로 올림.
@@ -193,40 +193,123 @@ git switch -c [newBranch]: 새로운 브랜치를 생성하고 이동
 
 6. 로그 이력과 과거 여행
 학습 내용: Git 로그 이력 조회와 과거 커밋으로의 여행
+# -1. 저장소 생성
+$ git init basic
 
-7. 커밋과 로그 이력, 과거 여행 실습
-학습 내용: 커밋과 로그 이력 관리 및 과거 여행에 대한 실습
+# 6-2. 파일 생성 및 커밋
+$ echo "aaa" > hello.txt
+$ git add hello.txt
+$ git commit -m "A"
 
-8. 파일 비교: diff
+# 6-3. 파일 수정 및 커밋
+$ echo "bbb" >> hello.txt
+$ git commit -am "B"
+
+# 6-4. 파일 다시 수정 및 커밋
+$ echo "ccc" >> hello.txt
+$ git commit -am "C"
+
+# 6-5. 파일 추가 수정과 다시 수정
+$ echo "ddd" >> hello.txt
+$ git add hello.txt
+$ echo "eee" >> hello.txt
+$ git status
+
+# 6-6. 다시 최신 버전으로 돌아오기
+$ git checkout main
+
+7. 파일 비교: diff
 학습 내용: Git에서 파일 비교 도구인 diff의 활용
 
-9. 파일 삭제와 복원: rm과 restore
+8. 파일 삭제와 복원: rm과 restore
 학습 내용: Git에서 파일 삭제와 복원에 대한 학습
-10. 버전과 태그 활용 실습
-학습 내용: Git 버전 및 태그 활용에 대한 실습
-11. 브랜치 개요와 관리
-학습 내용: Git 브랜치의 기본 개념과 관리 방법 학습
-12. 브랜치 개요와 관리 실습
-학습 내용: 브랜치 개념 이해 및 브랜치 관리 실습
-13. 원격 저장소 복제 Clone
+
+9. 원격 저장소 복제 Clone
 학습 내용: Git 원격 저장소를 로컬로 복제하는 방법에 대한 학습
-14. 지역과 원격 저장소 연동 push pull
+10. 지역과 원격 저장소 연동 push pull
 학습 내용: 지역 저장소와 원격 저장소 간의 동기화 방법 학습
-15. 지역과 원격 저장소 브랜치 연동 실습
+11. 지역과 원격 저장소 브랜치 연동 실습
 학습 내용: 지역과 원격 저장소의 브랜치를 연동하는 실습
-16. 오픈소스 소프트웨어
-학습 내용: 오픈소스 소프트웨어에 대한 이해와 활용 방법
-17. 임시저장 stash
+12. 임시저장 stash
 학습 내용: Git에서 변경 사항을 일시적으로 저장하는 stash 기능 학습
-18. 다양한 브랜치 병합
-학습 내용: 다양한 상황에서의 Git 브랜치 병합
-19. 병합 충돌과 해결
-학습 내용: Git에서 발생하는 병합 충돌에 대한 이해와 해결 방법
-20. 브랜치 리베이스 rebase
+### 주요 내용
+1. **임시 저장 기초**
+   - `git stash`를 사용하여 현재 작업 디렉토리와 스테이징 영역을 저장할 수 있음.
+   - `git stash list`로 stash 목록을 확인하고 삭제 가능.
+   - `git stash apply` 또는 `git stash pop`으로 stash를 다시 적용할 수 있음.
+
+2. **임시 저장과 충돌 해결**
+   - `git stash apply` 시 충돌이 발생할 수 있음.
+   - 충돌이 발생하면 충돌 내용을 해결하고 다시 스테이징하는 과정 필요.
+
+3. **다양한 명령어**
+   - `git stash save`를 사용하여 stash에 메시지 추가 가능.
+   - `-u` 또는 `--include-untracked` 옵션을 사용하여 untracked 파일도 함께 저능.
+   - `-k` 또는 `--keep-index` 옵션을 사용하여 스테이징 영역은 유지하면서 디렉토리만 저장 가능.
+   - `-m` 옵션으로 stash에 메시지 추가 가능.
+
+4. **임시 저장 삭제**
+   - `git stash drop`을 사용하여 특정 stash를 삭제.
+   - `git stash clear`로 모든 stash를 삭제.
+
+5. **Untracked 파일 삭제**
+   - `git clean` 명령어로 untracked 파일을 삭제할 수 있음.
+
+### 사용 예시
+```bash
+# 기본적인 stash
+git stash
+
+# stash 목록 확인
+git stash list
+
+# 특정 stash 적용
+git stash apply stash@{n}
+
+# 충돌 해결 후 추가 커밋
+git add <resolved-file>
+git commit -m "Resolved conflict"
+
+# stash 삭제
+git stash drop stash@{n}
+
+# 모든 stash 삭제
+git stash clear
+
+# Untracked 파일 삭제
+git clean -i  # 대화형 모드
+git clean -f  # 강제로 삭제
+```
+
+13. 브랜치 리베이스 rebase
 학습 내용: 브랜치 리베이스를 통한 Git 이력 정리 방법
-21. 커밋 이력 수정
+14. 커밋 이력 수정
 학습 내용: 이미 커밋한 이력을 수정하는 방법
-23. 버전 되돌리기 reset
+
+15. 버전 되돌리기 reset
 학습 내용: Git에서 커밋을 되돌리는 reset 기능에 대한 학습
-24. 버전 되돌리기 reset 실습
-학습 내용: reset을 활용한 커밋 되돌리기 실습
+# Git 버전 되돌리기 및 Reset 옵션 요약
+## 1. 과거 버전으로 완전히 되돌리기
+- 커밋 이력에서 이전 특정 커밋으로 완전히 되돌아가는 방법
+- `git reset` 명령어를 사용
+- 주의: 이전 이력 이후의 모든 내용이 삭제됨
+
+## 2. Reset 옵션 종류
+- `git reset` 명령어의 세 가지 옵션: `--hard`, `--mixed`, `--soft`
+
+## 3. Reset 옵션 설명
+- `--hard`: 작업 폴더, 스테이징 영역, 깃 저장소를 지정된 커밋 이후의 내용으로 완전히 복사・수정
+- `--mixed` (기본 옵션): 스테이징 영역과 깃 저장소에 지정된 커밋 이후의 내용을 복사・수정, 작업 폴더는 이전 내용 그대로 남음
+- `--soft`: 깃 저장소에만 지정된 커밋 이후의 내용을 복사・수정, 스테이징 영역과 작업 폴더는 이전 내용 그대로 남음
+
+## 4. Reset 명령어 활용
+- `git reset <옵션> <돌아가고 싶은 커밋>` 형식으로 사용
+- 주의: Reset 후 다시 이전 상태로 되돌아가기 위해 추가 작업이 필요
+
+## 5. Reset 후 바로 이전 상태로 되돌아가기
+- `ORIG_HEAD`를 활용하여 간단히 이전 상태로 되돌아갈 수 있음
+- 예: `$ git reset --hard ORIG_HEAD`
+
+## 6. Reset과 Checkout 비교
+- `git reset`은 커밋 이력을 수정하고, 작업 폴더, 스테이징 영역, 깃 저장소를 조절함
+- `git checkout`은 HEAD 포인터를 조절하여 브랜치의 마지막 커밋 이전으로 이동함
